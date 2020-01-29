@@ -26,6 +26,12 @@
 - 남은 문제
   - 스프링 자동 설정이 정확히 어떤것들을 설정해 주는지 모르니 기본적으로 사용하던 설정들중 어떤것들이 빠져 있는지 확인이 필요하다.
   - 가능하다면 스프링에서 제동해주는 자동설정을 그대로 사용하고 싶기 때문에 방법을 조금더 찾아 볼 예정. 
+- 문제 해결 추가.
+  - 스프링 자동 설정중 테이블 네이밍 설정이 빠져 있는것을 확인. <br>
+  hibernate.implicit_naming_strategy / org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy 추가.
+  - 스프링에서 제공하는 자동 설정이 어떤것들이 있는지 라이브러리에서 확인. <br>
+  org.springframework.boot.autoconfigure.orm.jpa 해당 패키지 아래 jpa, hibernate autoconfiguration을 확인할 수 있다.
+
 
 참고 <br>
 스프링 부트 2.2.2 <br>
