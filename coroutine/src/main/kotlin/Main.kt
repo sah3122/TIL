@@ -9,8 +9,5 @@ val LoomDispatcher = Executors
     .asCoroutineDispatcher()
 
 fun main() {
-//    SequenceBuilder.run()
-//    print(SequenceBuilder.fibonacci().take(10).toList())
-
-    Launch.launchTest()
+    Launch.launchBuilder()
 }
