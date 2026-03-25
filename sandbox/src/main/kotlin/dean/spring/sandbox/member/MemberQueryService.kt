@@ -4,10 +4,14 @@ import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
+import java.util.stream.Stream
 
 @Service
 @Transactional(readOnly = true)
 class MemberQueryService(private val memberRepository: MemberRepository) {
+
+    fun <R> withMemberStream(action: (Stream<Member>) -> R): R =
+        memberRepository.streamAllBy().use(action)
 
     fun findPage(page: Int, size: Int): List<Member> =
         memberRepository.findAll(PageRequest.of(page, size, Sort.by("id"))).content
