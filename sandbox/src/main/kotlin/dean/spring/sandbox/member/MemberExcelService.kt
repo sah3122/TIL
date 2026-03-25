@@ -12,14 +12,10 @@ class MemberExcelService(private val memberQueryService: MemberQueryService) {
         Workbook(outputStream, "SandboxApp", "1.0").use { workbook ->
             val ws = workbook.newWorksheet("Members")
             writeHeader(ws)
-            var row = 1
-            var page = 0
-            do {
-                val batch = memberQueryService.findPage(page++, PAGE_SIZE)
-                batch.forEach { member ->
-                    writeRow(ws, row++, member)
-                }
-            } while (batch.size == PAGE_SIZE)
+            memberQueryService.withMemberStream { stream ->
+                var row = 1
+                stream.forEach { member -> writeRow(ws, row++, member) }
+            }
         }
     }
 
@@ -40,7 +36,4 @@ class MemberExcelService(private val memberQueryService: MemberQueryService) {
         ws.value(rowIdx, 6, member.createdAt.toString())
     }
 
-    companion object {
-        private const val PAGE_SIZE = 5_000
-    }
 }
