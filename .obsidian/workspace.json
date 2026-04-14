@@ -184,5 +184,17 @@
     }
   },
   "active": "e59b681340374c3d",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "algorithm/src/main/kotlin/LeetCode.kt",
+    "algorithm/build/classes/kotlin/main/dean/ai/Chapter2.class",
+    "algorithm/src/main/kotlin/Chapter2.kt",
+    "algorithm/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab",
+    "algorithm/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.len",
+    "algorithm/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i",
+    "algorithm/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i.len",
+    "algorithm/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream",
+    "algorithm/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream.len",
+    "algorithm/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at",
+    "algorithm/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab"
+  ]
 }

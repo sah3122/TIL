@@ -1,5 +1,6 @@
 package dean.spring.sandbox.member
 
+import dean.spring.sandbox.log
 import org.dhatim.fastexcel.Workbook
 import org.dhatim.fastexcel.Worksheet
 import org.springframework.stereotype.Service
@@ -14,7 +15,11 @@ class MemberExcelService(private val memberQueryService: MemberQueryService) {
             writeHeader(ws)
             memberQueryService.withMemberStream { stream ->
                 var row = 1
-                stream.forEach { member -> writeRow(ws, row++, member) }
+                log.info("member stream 조회 $row 회")
+                Thread.sleep(1000)
+                stream.forEach { member ->
+                    writeRow(ws, row++, member)
+                }
             }
         }
     }

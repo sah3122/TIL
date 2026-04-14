@@ -3,9 +3,9 @@ spring:
     name: sandbox
 
   datasource:
-    url: jdbc:mysql://localhost:3306/sandbox_db?useSSL=false&serverTimezone=Asia/Seoul&useCursorFetch=true&defaultFetchSize=1000
-    username: root
-    password: secret
+    url: jdbc:mysql://localhost:3326/condition?useSSL=false&allowPublicKeyRetrieval=true
+    username: master
+    password: condition!
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       maximum-pool-size: 10
@@ -15,8 +15,12 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: false
+    show-sql: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
     open-in-view: false
+
+  mvc:
+    async:
+      request-timeout: 600000
